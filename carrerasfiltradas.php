@@ -302,7 +302,7 @@ if ($_GET['id_area'] != '-1') {
                         $arrn = ['', '', ''];
                         $pagina1 = str_replace($arrv, $arrn, $pagina1);
 
-                        $salida = $salida . "<div class='resalta2'>Página Web:</div><a href='http://" . $pagina1 . "'>http://" . $pagina1 . "</a><br>";
+                        $salida = $salida . "<div class='resalta2'>Página Web:</div><a target='_blank' href='http://" . $pagina1 . "'>http://" . $pagina1 . "</a><br>";
                     }
                     if ($pagina2 != '') {
                         $pagina2 .= '#fin';
@@ -310,7 +310,7 @@ if ($_GET['id_area'] != '-1') {
                         $arrn = ['', '', ''];
                         $pagina2 = str_replace($arrv, $arrn, $pagina2);
 
-                        $salida = $salida . "<a href='http://" . $pagina2 . "'>http://" . $pagina2 . "</a><br>";
+                        $salida = $salida . "<a target='_blank' href='http://" . $pagina2 . "'>http://" . $pagina2 . "</a><br>";
                     }
 
                     if ($correo1 != '') {
@@ -328,7 +328,7 @@ if ($_GET['id_area'] != '-1') {
                         $arrv = ['http://', 'https://', 'www.', 'facebook.com/', '/#fin', '#fin'];
                         $arrn = ['', '', '', '', '', ''];
                         $facebook = str_replace($arrv, $arrn, $facebook);
-                        $salida = $salida . "<div class='resalta2'>Facebook:</div><a href='http://www.facebook.com/" . $facebook . "'>" . $facebook . "</a><br>";
+                        $salida = $salida . "<div class='resalta2'>Facebook:</div><a target='_blank' href='http://www.facebook.com/" . $facebook . "'>" . $facebook . "</a><br>";
                     }
 
                     if ($twitter != '') {
@@ -336,7 +336,7 @@ if ($_GET['id_area'] != '-1') {
                         $arrv = ['http://', 'https://', 'www.', 'twitter.com/', '/#fin', '#fin', '@'];
                         $arrn = ['', '', '', '', '', '', ''];
                         $twitter = str_replace($arrv, $arrn, $twitter);
-                        $salida = $salida . "<div class='resalta2'>Twitter:</div><a href='http://www.twitter.com/" . $twitter . "'>@" . $twitter . "</a><br>";
+                        $salida = $salida . "<div class='resalta2'>Twitter:</div><a target='_blank' href='http://www.twitter.com/" . $twitter . "'>@" . $twitter . "</a><br>";
                     }
 
                     if ($linkedin != '') {
@@ -344,7 +344,7 @@ if ($_GET['id_area'] != '-1') {
                         $arrv = ['http://', 'https://', 'www.', 'ar.linkedin.com/', 'linkedin.com/', '/#fin', '#fin', '@'];
                         $arrn = ['', '', '', '', '', '', '', ''];
                         $linkedin = str_replace($arrv, $arrn, $linkedin);
-                        $salida = $salida . "<div class='resalta2'>Linkedin:</div><a href='http://ar.linkedin.com/" . $linkedin . "'>" . $linkedin . "</a><br>";
+                        $salida = $salida . "<div class='resalta2'>Linkedin:</div><a target='_blank' href='http://ar.linkedin.com/" . $linkedin . "'>" . $linkedin . "</a><br>";
                     }
 
                     if ($imagen != '') {
