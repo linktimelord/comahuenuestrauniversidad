@@ -15,15 +15,11 @@
         <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
         <link rel="stylesheet" href="css/fonts.css" type="text/css" media="all">
         <script type="text/javascript" src="ajax.js" ></script>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-
-
-        <!-- Agregado -->
 
         <script>
-            function realizaProceso(id_area, id_localidad, tiempo, siglas) {
+            function realizaProceso(id_area, id_localidad, tiempo, siglas, facultad) {
                         var parametros = {
-                                    "id_area": id_area, "id_localidad": id_localidad, "tiempo": tiempo, "siglas": siglas
+                                    "id_area": id_area, "id_localidad": id_localidad, "tiempo": tiempo, "siglas": siglas, "facultad": facultad
                         };
                         $.ajax({
                                     data:  parametros,
@@ -33,6 +29,7 @@
                                                 $("#resultados").html("Procesando, espere por favor...");
                                     },
                                     success:  function (response) {
+                        cerrarmenu();
                                                 $("#resultados").html(response);
                                     }
                         });
@@ -57,8 +54,6 @@
                         });
             }
         </script>
-        <!-- Agregado -->
-
 
     </head>
     <body>
@@ -70,14 +65,10 @@
             <!-- default panel  -->
             <div data-role="panel" id="defaultpanel">
 
-                <h3>Default panel options</h3>
-                <p>This panel has all the default options: positioned on the left with the reveal display mode. The panel markup is <em>before</em> the header, content and footer in the source order.</p>
-                <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
-                <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+
 
             </div><!-- /default panel -->
 
-            <!-- Note: all other panels are at the end of the page, scroll down  -->
             <div class="wrapper col0">
                 <div id="topline">
                     <div id="dv">
@@ -93,7 +84,7 @@
                 </div>
             </div>
             <div data-role="header" class="jqm-header">
-                <h2><a href="../" title="jQuery Mobile Demos home"><img src="imgs/titulo.png" alt="jQuery Mobile"></a></h2>
+                <h2><a href="#" title="Universidad del Comahue"><img src="imgs/titulo.png" alt="Uncoma"></a></h2>
                 <a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
                 <a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
 
@@ -121,7 +112,10 @@
 
             <div role="main" class="ui-content jqm-content">
                 <!-- agregado  --><div class="content">
-                    <div id="titulo_seccion">BUSCAR CARRERAS</div>
+                    <div id="titulo_seccion">
+                        CARRERAS
+                        <p style="font-size: 15px; padding-bottom: 0px; margin-bottom: 0px;padding-top: 0px; margin-top: 0px;">OFERTA ACAD&Eacute;MICA</p>
+                    </div>
 
                     <div id="contenido_subtitulo" style="text-align:left;">
                     </div>
@@ -150,7 +144,7 @@
             <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
                 <ul class="jqm-list ui-alt-icon ui-nodisc-icon">
 
-                    <li data-filtertext="demos homepage" data-icon="home"><a href="index.html">INICIO</a></li>
+                    <li data-filtertext="demos homepage" data-icon="home"><a href="http://uncoma.edu.ar" title="inicio">INICIO</a></li>
                     <li data-filtertext="buttons button markup buttonmarkup method anchor link button element"><a href="buscarcarrera.php" data-ajax="false">BUSCAR CARRERA</a></li>
                     <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">    
 

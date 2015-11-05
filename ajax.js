@@ -42,7 +42,23 @@ function Buscar2() {
         }
     };
     ajax.send(null);
+}
+function cerrarmenu(){
+    $('#cerrare').trigger('click');
+}
 
+function Buscar3() {
+    var Texto2 = document.getElementById('texto2').value;
+    var Resultados = document.getElementById('resultados');
+    ajax = Buscador();
+    ajax.open("GET", "Buscar.php?q=" + Texto2);
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            Resultados.innerHTML = ajax.responseText;
+        }
+    };
+    ajax.send(null);
+$('#cerrare').trigger('click');
 }
 
 function Borrar() {
