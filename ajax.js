@@ -21,7 +21,7 @@ function Buscar() {
     var Texto = document.getElementById('texto').value;
     var Resultados = document.getElementById('resultados');
     ajax = Buscador();
-    ajax.open("GET", "Buscar.php?q=" + Texto);
+    ajax.open("GET", "buscar.php?q=" + Texto);
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4) {
             Resultados.innerHTML = ajax.responseText;
@@ -35,7 +35,7 @@ function Buscar2() {
     var Texto2 = document.getElementById('texto2').value;
     var Resultados = document.getElementById('resultados');
     ajax = Buscador();
-    ajax.open("GET", "Buscar.php?q=" + Texto2);
+    ajax.open("GET", "buscar.php?q=" + Texto2);
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4) {
             Resultados.innerHTML = ajax.responseText;
@@ -51,7 +51,7 @@ function Buscar3() {
     var Texto2 = document.getElementById('texto2').value;
     var Resultados = document.getElementById('resultados');
     ajax = Buscador();
-    ajax.open("GET", "Buscar.php?q=" + Texto2);
+    ajax.open("GET", "buscar.php?q=" + Texto2);
     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4) {
             Resultados.innerHTML = ajax.responseText;

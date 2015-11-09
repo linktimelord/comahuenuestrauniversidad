@@ -2,6 +2,7 @@
 
 global $cadena;
 $cadena = " host='' port='' dbname='' user='' password='' ";
+
 $con = pg_connect($cadena)
         or die('No se ha podido conectar: ' . pg_last_error());
 
