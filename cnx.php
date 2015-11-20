@@ -1,7 +1,7 @@
 <?php
 
 global $cadena;
-$cadena = " host='localhost' port='5432' dbname='libro_unco' user='postgres' password='1234' ";
+$cadena = " host='' port='' dbname='' user='' password='' ";
 
 
 $con = pg_connect($cadena)
