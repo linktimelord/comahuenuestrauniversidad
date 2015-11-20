@@ -1,7 +1,8 @@
 <?php
 
 global $cadena;
-$cadena = " host='' port='' dbname='' user='' password='' ";
+$cadena = " host='localhost' port='5432' dbname='libro_unco' user='postgres' password='1234' ";
+
 
 $con = pg_connect($cadena)
         or die('No se ha podido conectar: ' . pg_last_error());

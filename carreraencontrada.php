@@ -150,9 +150,10 @@ function observation() {
     $cont = pg_num_rows($result);
     if ($cont != 0) {
         $raw = pg_fetch_array($result, null, PGSQL_ASSOC);
-        $arrv = ['ÃƒÂ¡c', 'ÃƒÂ©', 'ÃƒÂ­', 'ÃƒÂ³','rÃƒÂ¡','ÃƒÂ¡s,','ÃÂ­','ÃÂ©','rÃÂ¡','ÃÂ¡s','iÃÂ³n','ÃÂº'];
+        /*$arrv = ['ÃƒÂ¡c', 'ÃƒÂ©', 'ÃƒÂ­', 'ÃƒÂ³','rÃƒÂ¡','ÃƒÂ¡s,','ÃÂ­','ÃÂ©','rÃÂ¡','ÃÂ¡s','iÃÂ³n','ÃÂº'];
         $arrn = ['á', 'é', 'í', 'ó','ría','ás','í','é','ría','ás','ión','ú'];
-        $temp = str_replace($arrv, $arrn, $raw["descripcion"]);
+        $temp = str_replace($arrv, $arrn, $raw["descripcion"]);*/
+        $temp=$raw["descripcion"];
         $observacion = "<hr><div class='resalta'>Observación</div>-- $temp --";
     }
     return $observacion;
