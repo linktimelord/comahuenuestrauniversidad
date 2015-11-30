@@ -1,0 +1,2 @@
+<p id="and1" style="text-align: center; margin: 0; padding: 0;"><a href="https://play.google.com/store/apps/details?id=com.phonegap.comahuenuestrauniversidad" title="App Android">Descargate la nueva App<br> <img width="200" src="imgs/app5-100.png" alt="App Android" title="App Android"></a></p>
+<p id="and2" style="text-align: center; margin: 0; padding: 0;"><a href="https://play.google.com/store/apps/details?id=com.phonegap.comahuenuestrauniversidad" title="App Android"><img width="300" src="imgs/app5-200.png" alt="App Android" title="App Android"></a></p>

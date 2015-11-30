@@ -4,7 +4,15 @@
     float:right;
     width:300px;
 }
-
+#and1{
+    display: block;
+}
+#and1 a{
+    text-decoration: none;
+}
+#and2{
+    display: none;
+}
 .column #featured{
     display:block;
     width:300px;
@@ -229,35 +237,35 @@
     border-top: 2px solid lightblue;
 }
 div.wrapper{
-        display:block;
-        /*width:100%;*/
-        margin:0;
-        /*text-align:center;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: #E3E3E3;*/
-    }
-    
-    #topnav ul, #topnav li{
-	float:left;
-	list-style:none;
-	margin:0;
-	/*padding:0;*/
-        font-size:14px;
-        margin:0 35px 0 0;
-        text-transform:uppercase;
-        margin-top: 5px;
-        text-align:right;
-	}
-        #topnav ul{
-        float:none;
-        width: 71.5%;
-        background:#fff;
-        margin:0 auto;
-    }
-     #topnav a{
-	text-decoration:none;
-	}
+    display:block;
+    /*width:100%;*/
+    margin:0;
+    /*text-align:center;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #E3E3E3;*/
+}
+
+#topnav ul, #topnav li{
+    float:left;
+    list-style:none;
+    margin:0;
+    /*padding:0;*/
+    font-size:14px;
+    margin:0 35px 0 0;
+    text-transform:uppercase;
+    margin-top: 5px;
+    text-align:right;
+}
+#topnav ul{
+    float:none;
+    width: 71.5%;
+    background:#fff;
+    margin:0 auto;
+}
+#topnav a{
+    text-decoration:none;
+}
 
 #topbar #search{
     display:block;
@@ -267,8 +275,8 @@ div.wrapper{
     overflow:hidden;
 }
 #footer a{
- text-decoration: none;
- color: #059BD8;
+    text-decoration: none;
+    color: #059BD8;
 }
 
 #footer h2{
@@ -354,7 +362,7 @@ div.wrapper{
     border-bottom: 1px solid #0064AD;
     border-top: 1px solid #0064AD;
     padding: 7px 0 7px 0;
-    
+
 }
 #resultados ul{
     font-size:13px;
@@ -796,12 +804,18 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
         width: 600px;
         height: 73px;
     }
+    #and1{
+        display: none;
+    }
+    #and2{
+        display: block;
+    }
 }
 @media (min-width: 61.5em) {
     .jqm-demos .jqm-header {
-    
-    position: static; 
-}
+
+        position: static; 
+    }
     #topline{
         display: block;
     }
@@ -899,7 +913,7 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
         padding-top: 2em;
         padding-left: 0;
         padding-right: 0;
-        padding-top: 3em;
+        padding-top: 1em;
         text-align:center;
         position:relative;
         clear: both;

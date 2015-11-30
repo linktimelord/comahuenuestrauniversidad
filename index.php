@@ -112,6 +112,7 @@
 
             <div role="main" class="ui-content jqm-content">
                 <!-- agregado  --><div class="content">
+                    <?php include './androidapp.php'; ?>
                     <div id="titulo_seccion">
                         CARRERAS
                         <p style="font-size: 15px; padding-bottom: 0px; margin-bottom: 0px;padding-top: 0px; margin-top: 0px;">OFERTA ACAD&Eacute;MICA</p>
