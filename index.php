@@ -112,7 +112,6 @@
 
             <div role="main" class="ui-content jqm-content">
                 <!-- agregado  --><div class="content">
-                    <?php include './androidapp.php'; ?>
                     <div id="titulo_seccion">
                         CARRERAS
                         <p style="font-size: 15px; padding-bottom: 0px; margin-bottom: 0px;padding-top: 0px; margin-top: 0px;">OFERTA ACAD&Eacute;MICA</p>
@@ -133,7 +132,7 @@
                 </div>
                 <div class="column">
                     <div id="subnav" style="box-shadow:0px 5px 5px #0064AD">
-                        <h2><strong>Buscar por...</strong></h2>
+                        <h2><strong>Buscar</strong></h2>
                         <?php
                         include("./acordeon.php");
                         ?>
@@ -239,7 +238,7 @@
 
             <!-- Este es el panel derecho -->
             <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay" data-theme="a" style="background:#f6f6f6;">
-                <h2><strong>Buscar por...</strong></h2>
+                <h2><strong>Buscar</strong></h2>
                 <?php
                 include("./menuacordeon.php");
                 ?>

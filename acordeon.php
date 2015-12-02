@@ -1,11 +1,18 @@
 <div data-role="collapsibleset" data-theme="a" data-inset="false" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-mini="true">
-        
+
+
+    <div data-role="collapsible">
+        <h3 title="Disponible la App">APP ANDROID <img width="20" src="imgs/andapp.png" alt="App Android" title="App Android"></h3>
+        <a href="https://play.google.com/store/apps/details?id=com.phonegap.comahuenuestrauniversidad" title="App Android" >DESCARGAR<br> <img width="200" src="imgs/app5-100.png" alt="App Android" title="App Android"></a>
+    </div>
     <div data-role="collapsible">
         <h3 title="Buscar por &aacute;rea" >&Aacute;REA</h3>
             <?php
         aarea();
         ?>
     </div>
+
+
 
     <div data-role="collapsible" style="text-align: center;">
         <h3 title="Buscar por nombre">NOMBRE</h3>
