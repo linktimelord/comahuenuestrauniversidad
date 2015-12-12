@@ -92,11 +92,11 @@
                     <div id="topnav">
                         <ul>
                             <li class=""><a title="Buscar carreras" href="#">BUSCAR CARRERAS</a></li>
-                            <li class=""><a title="Inicio" href="http://www.uncoma.edu.ar/index.html">INICIO</a></li>
-                            <li><a title="Institucional" href="http://www.uncoma.edu.ar/institucional/historia.html">INSTITUCIONAL</a></li>
-                            <li><a title="Academica" href="http://www.uncoma.edu.ar/academica/index.html">ACADÉMICA</a></li>
-                            <li><a title="Ciencia y tecnología" href="http://www.uncoma.edu.ar/cyt/index.html">CIENCIA Y TECNICA</a>
-                            </li><li title="Extensión" class="last"><a href="http://www.uncoma.edu.ar/extension/index.html">EXTENSIóN</a></li>
+                            <li class=""><a title="Inicio" onclick="document.location='http://www.uncoma.edu.ar/';">INICIO</a></li>
+                            <li><a title="Institucional" onclick="document.location='http://www.uncoma.edu.ar/institucional/historia.html';"  >INSTITUCIONAL</a></li>
+                            <li><a title="Academica" onclick="document.location='http://www.uncoma.edu.ar/academica/index.html';" >ACADÉMICA</a></li>
+                            <li><a title="Ciencia y tecnología" onclick="document.location='http://www.uncoma.edu.ar/cyt/index.html';" >CIENCIA Y TECNICA</a>
+                            </li><li class="last"><a title="Extensión" onclick="document.location='http://www.uncoma.edu.ar/extension/index.html';">EXTENSIóN</a></li>
                         </ul>
                     </div>
                     <div id="search">
