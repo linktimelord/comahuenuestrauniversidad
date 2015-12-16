@@ -18,7 +18,10 @@
     width:300px;
     margin-bottom:20px;
 }
-
+img.adapta{
+	max-width: 100%;
+	height: auto;
+}
 .column .holder{
     border-right: 0px solid #0064AD;
     border-left: 0px solid #0064AD;
@@ -336,7 +339,11 @@ div.wrapper{
     height: 100%;
 
 }
-
+#subnav h2{
+    
+    font-size: 23px;
+    
+}
 /* Header */
 .content{
     display:block;
@@ -732,6 +739,9 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 /* Search */
 .jqm-search-panel .ui-panel-inner {
     padding-top: 0;
+}
+.jqm-search-panel h2{
+	font-size: 1.3em;
 }
 .jqm-search-panel .ui-input-search {
     margin: 1em 0;

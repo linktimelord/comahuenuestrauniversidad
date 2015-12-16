@@ -2,8 +2,6 @@
 
 global $cadena;
 $cadena = " host='' port='' dbname='' user='' password='' ";
-
-
 $con = pg_connect($cadena)
         or die('No se ha podido conectar: ' . pg_last_error());
 
@@ -13,6 +11,7 @@ function Extraer($q) {
     $arrn = array('', '', '', '', '');
     $aux = str_replace($arrv, $arrn, strtolower($q));
     //fin de filtro
+
 
     $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) WHERE LOWER(plan_estudio.nombre) LIKE '%$aux%'";
 
@@ -114,7 +113,7 @@ function aarea() {
 }
 
 function aubicacion() {
-    $sql = "select localidad.nombre as a, provincia.nombre as b, id_localidad from localidad inner join provincia on localidad.id_provincia=provincia.id_provincia order by b asc";
+    $sql = "select localidad.nombre as a, provincia.nombre as b, id_localidad from localidad inner join provincia on localidad.id_provincia=provincia.id_provincia order by a asc";
     $result = consulta($sql);
 
 

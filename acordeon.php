@@ -55,5 +55,6 @@
         afacultad();
         ?>
     </div>
-
+	<br>
+<div class="fb-share-button" data-href="http://www.uncoma.edu.ar/oferta/" data-layout="button"></div>
 </div>

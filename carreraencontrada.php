@@ -114,13 +114,13 @@ function sedetion($sedetemp) {
 
 function ciudadtion() {
     $ciudad = '- ';
-    $sql = "SELECT localidad.nombre, sede.direccion, sede.telefono_1 from localidad inner join sede on (sede.id_localidad=localidad.id_localidad) inner join se_dicta on (sede.id_sede=se_dicta.id_sede) where se_dicta.id_plan=" .  $_GET['id'];
+    $sql = "SELECT localidad.nombre, sede.direccion, sede.telefono_1, localidad.caracteristica from localidad inner join sede on (sede.id_localidad=localidad.id_localidad) inner join se_dicta on (sede.id_sede=se_dicta.id_sede) where se_dicta.id_plan=" .  $_GET['id'];
     $result = pg_query($sql) or die("Error query " . pg_last_error());
     $cont = pg_num_rows($result);
     
     if ($cont != 0) {
         while ($raw = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-            $ciudad = $ciudad . $raw["nombre"]. ", ".$raw["direccion"].", Tel:".($raw["telefono_1"]);
+            $ciudad = $ciudad . $raw["nombre"]. ", ".$raw["direccion"].", Tel: (".($raw["caracteristica"]).") ".($raw["telefono_1"]);
             if($cont>1){
                 $ciudad = $ciudad . "<br>- ";
                 $cont = $cont -1;
