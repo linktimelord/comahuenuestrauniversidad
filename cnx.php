@@ -1,5 +1,5 @@
 <?php
-
+ini_set('default_charset','UTF8');
 global $cadena;
 $cadena = " host='' port='' dbname='' user='' password='' ";
 $con = pg_connect($cadena)
