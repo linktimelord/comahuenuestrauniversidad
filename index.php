@@ -22,9 +22,9 @@
         <script type="text/javascript" src="ajax.js" ></script>
 
         <script>
-            function realizaProceso(id_area, id_localidad, tiempo, siglas, facultad) {
+            function realizaProceso(id_area, id_localidad, tiempo, siglas, facultad, nivel) {
                         var parametros = {
-                                    "id_area": id_area, "id_localidad": id_localidad, "tiempo": tiempo, "siglas": siglas, "facultad": facultad
+                                    "id_area": id_area, "id_localidad": id_localidad, "tiempo": tiempo, "siglas": siglas, "facultad": facultad, "nivel": nivel
                         };
                         $.ajax({
                                     data:  parametros,
@@ -61,7 +61,20 @@
         </script>
 
     </head>
-    <body>
+    <body onload="raqui();">
+	<?php
+	include("./dir.php");
+	?>
+	<!-- INICIO DE LAS PESTAÑAS -->
+<div id="tabs-recuadro">
+<a target="_blank" href="http://prensa.uncoma.edu.ar/"><img src="images/TABS/TAB Prensa Universitaria.png" class="tab"></a><br/>
+<a target="_blank" href="https://www.facebook.com/comedor.universitario.37?fref=ts"><img src="images/TABS/TAB Comedor Universitario.png" class="tab"></a><br/>
+<a target="_blank" href="https://play.google.com/store/apps/details?id=com.phonegap.comahuenuestrauniversidad&hl=es_419"><img src="images/TABS/TAB Comahue Nuestra Universidad.png" class="tab"></a><br/>
+<a target="_blank" href="http://dialogopolitico.neuquen.gob.ar/"><img src="images/TABS/TAB Reforma Política.png" class="tab"></a>
+</div>
+
+<!-- ####################################################################################################### -->
+
 	<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

@@ -5,13 +5,14 @@
                     $cont = pg_num_rows($result);
 
                     if ($cont == 0) {
-                        print 'No hay carreras registradas en esta facultad';
+                        print 'Error 101: No hay carreras registradas en que cumplan las condiciones. <br/>';
+						//Query vacio
                     } else {
 
                         $salida = '';
                         echo '<ul>';
                         while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                            $unit = "<a style='color:#0064ad;text-decoration: none;' title='Ver información de la Unidad Académica' href='#' onclick=\"realizaProceso(-1,-1,-1,'" . $row["id_unidad_academica"] . "' );return false;\"> " . $row["unita"] . "</a>";
+                            $unit = "<a style='color:#0064ad;text-decoration: none;' title='Ver información de la Unidad Académica' href='#' onclick=\"realizaProceso(-1,-1,-1,'" . $row["id_unidad_academica"] . "', -1, -1 );return false;\"> " . $row["unita"] . "</a>";
                             $salida = $row["nombre"];
                             $area = $row["nomarea"];
                             if ($area != '') {

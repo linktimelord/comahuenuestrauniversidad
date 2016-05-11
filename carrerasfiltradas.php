@@ -11,33 +11,31 @@ if ($_GET['id_area'] != '-1') {
 
 //usar esto
         $cont = pg_num_rows($result);
-
+		$meh = "<div style='text-align: right !important;' class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?area=". $_GET['id_area'] ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Farea%3D". $_GET['id_area'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Farea%3D". $_GET['id_area'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
         if ($cont != 0) {
             $row = pg_fetch_array($result, null, PGSQL_ASSOC);
-            echo "<h2>-- " . $row["nombre"] . " --</h2>";
+            echo "<h2>-- " . $row["nombre"] . " --</h2>" . $meh;
         }
-
-
 
         $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) where pertenece.id_area='" . $_GET['id_area'] . "'";
 
         $result = consulta($sql);
-
+		
+		
+		
         include('funciones.php');
     } else {
 
-
-        $sql = "SELECT nombre FROM area where id_area='" . $_GET['id_area'] . "'";
-
-        $result = consulta($sql);
-
-
-        $cont = pg_num_rows($result);
-
-        if ($cont != 0) {
-            $row = pg_fetch_array($result, null, PGSQL_ASSOC);
-            echo "<h2>-- " . $row["nombre"] . " --</h2>";
-        }
+		$meh = "<div class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/' data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f35e9bfe130b114' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Dfc036aad53b13%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff3b6f015d0056b4%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
+        
+        echo "<h2>-- Todas las carreras --</h2>" . $meh;
+        
         $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) order by nombre asc";
 
 
@@ -49,13 +47,17 @@ if ($_GET['id_area'] != '-1') {
     $sql = "SELECT nombre from localidad where id_localidad='" . $_GET['id_localidad'] . "'";
 
     $result = consulta($sql);
-
+	
+	$meh = "<div style='text-align: right !important;' class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?ubicacion=". $_GET['id_localidad'] ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fubicacion%3D". $_GET['id_localidad'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fubicacion%3D". $_GET['id_localidad'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
 
     $cont = pg_num_rows($result);
 
     if ($cont != 0) {
         $row = pg_fetch_array($result, null, PGSQL_ASSOC);
-        echo "<h2>-- " . $row["nombre"] . " --</h2>";
+        echo "<h2>-- " . $row["nombre"] . " --</h2>". $meh;
     }
 
 
@@ -63,7 +65,7 @@ if ($_GET['id_area'] != '-1') {
 
 
     include('funciones.php');
-} elseif ($_GET['tiempo'] != '-1') {
+}  elseif ($_GET['tiempo'] != '-1') {
 
     $tiempo = "";
     switch ($_GET['tiempo']) {
@@ -93,8 +95,13 @@ if ($_GET['id_area'] != '-1') {
             //$sql = "SELECT * from plan_estudio where duracion<6";
             break;
     }
+	
+	$meh = "<div style='text-align: right !important;' class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?duracion=". $_GET['tiempo'] ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fduracion%3D". $_GET['tiempo'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fduracion%3D". $_GET['tiempo'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
 
-    echo "<h2>-- " . $tiempo . " --</h2>";
+    echo "<h2>-- " . $tiempo . " --</h2>". $meh;
 
 
     include('funciones.php');
@@ -107,10 +114,15 @@ if ($_GET['id_area'] != '-1') {
 
 
     $cont = pg_num_rows($result);
+	
+	$meh = "<div style='text-align: right !important;' class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?facultad=%27". $_GET['facultad'] ."%27 data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Ffacultad%3D%27". $_GET['facultad'] ."%27&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Ffacultad%3D%27". $_GET['facultad'] ."%27&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
 
     if ($cont != 0) {
         $row = pg_fetch_array($result, null, PGSQL_ASSOC);
-        echo "<h2>-- " . $row["nombre"] . " --</h2>";
+        echo "<h2>-- " . $row["nombre"] . " --</h2>" . $meh;
     }
 
 
@@ -118,7 +130,35 @@ if ($_GET['id_area'] != '-1') {
 
 
     include("funciones.php");
-} elseif ($_GET['siglas'] != '-1') {
+}  elseif ($_GET['nivel'] != '-1') {
+
+    $tiempo = "";
+    switch ($_GET['nivel']) {
+        case 1:
+            $tiempo = "Pregrado/Grado";
+            $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) where (nivel<1 or nivel is null)";
+            break;
+        case 2:
+            $tiempo = "Posgrado";
+            $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) where nivel>0";
+            break;
+        default:
+            $tiempo = "Grado";
+            $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) where nivel=0";
+            break;
+    }
+	
+	$meh = "<div style='text-align: right !important;' class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?nivel=". $_GET['nivel'] ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fnivel%3D". $_GET['nivel'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fnivel%3D". $_GET['nivel'] ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
+	
+    echo "<h2>-- " . $tiempo . " --</h2>" . $meh;
+
+
+    include('funciones.php');
+}
+elseif ($_GET['siglas'] != '-1') {
     $siglas = $_GET['siglas'];
 
     $sql = "SELECT * FROM unidad_academica where unidad_academica.sigla='" . $siglas . "'";

@@ -781,6 +781,27 @@ img#cabecera{
 #formulario_contacto_titulo{
     color: #0064AD;
 }
+
+#tabs-recuadro{
+	position: fixed;
+	top: 250px;
+	right: -140px;
+	z-index: 9999;
+}
+
+.tab{
+	width: 200px;
+	margin-bottom: 5px;
+	right: 0px;
+transition: all 0.3s ease-out 0s;
+}
+
+.tab:hover{
+	position: relative;
+	right: 140px;
+	box-shadow: 27px 15px 20px #666666;
+}
+
 @media screen and (max-width: 81.525em){
     #header, #topline, #topbar, #breadcrumb, .container, #hpage_cats, #adblock, #footer, #copyright, #redes{
         position:relative;

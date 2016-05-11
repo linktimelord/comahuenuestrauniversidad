@@ -32,15 +32,15 @@
     <div data-role="collapsible">
         <h3 title="Buscar por duraci&oacute;n">DURACI&Oacute;N</h3>
             <ul data-role="listview" style="list-style: none;">
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick="realizaProceso(-2, -1, -1, -1);
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick="realizaProceso(-2, -1, -1, -1, -1, -1);
                     return false;">Todas las carreras</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 1, -1);
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 1, -1, -1, -1);
                     return false;" title="Menor a 3 años" href='#'>Menor a 3 años</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 2, -1);
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 2, -1, -1, -1);
                     return false;" title="De 3 a 4 años" href='#'>De 3 a 4 años</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 3, -1);
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 3, -1, -1, -1);
                     return false;" title="De 4 a 5 años" href='#'>De 4 a 5 años</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 4, -1);
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, 4, -1, -1, -1);
                     return false;" title="Mayor a 5 años" href='#'>Mayor a 5 años</a></li>
         </ul>
     </div>
@@ -51,5 +51,19 @@
         afacultad();
         ?>
     </div>
+	
+	<div data-role="collapsible" style="text-align: center;">
+        <h3 title="Buscar por nivel">NIVEL</h3>
+            <ul data-role="listview" style="list-style: none;">
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick="realizaProceso(-2, -1, -1, -1, -1, -1);
+                    return false;">Todas las carreras</a></li>
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, -1, -1, -1, 1);
+                    return false;" title="Pregrado y Grado" href='#'>Pregrado / Grado</a></li>
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, -1, -1, -1, 2);
+                    return false;" title="Posgrado" href='#'>Posgrado</a></li>
+        </ul>
+    </div>
+	
+	
 </div>
 <a hidden id="cerrare"  href="#demo-links" data-rel="close" >Cerrar Men&uacute;</a>

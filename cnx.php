@@ -15,7 +15,7 @@ function Extraer($q) {
 
     $sql = "SELECT plan_estudio.*, area.nombre AS nomarea, unidad_academica.nombre AS unita FROM plan_estudio inner join unidad_academica on (unidad_academica.sigla = plan_estudio.id_unidad_academica) inner join pertenece on (pertenece.id_plan = plan_estudio.id_plan) inner join area  on (area.id_area=pertenece.id_area) WHERE LOWER(plan_estudio.nombre) LIKE '%$aux%'";
 
-    $result = pg_query($sql) or die("Error query " . pg_last_error());
+    $result = pg_query($sql) or die();
 
 
     $cont = pg_num_rows($result);
@@ -40,7 +40,7 @@ function Extraer($q) {
 
             $sql2 = "SELECT localidad.nombre, sede.direccion from localidad inner join sede on (sede.id_localidad=localidad.id_localidad) inner join se_dicta on (sede.id_sede=se_dicta.id_sede) where se_dicta.id_plan='" . $plan . "'";
 
-            $result2 = pg_query($sql2) or die("Error query " . pg_last_error());
+            $result2 = pg_query($sql2) or die();
             $cont2 = pg_num_rows($result2);
             $ubicacion = '';
             if ($cont2 > 0) {
@@ -87,7 +87,7 @@ function consulta($consulta) {
     $con = pg_connect($cadena)
             or die('No se ha podido conectar: ' . pg_last_error());
 
-    $result = pg_query($consulta) or die("Error query " . pg_last_error());
+    $result = pg_query($consulta) or die();
     return $result;
 }
 
@@ -106,7 +106,7 @@ function aarea() {
         echo "<li><a data-rel='close' style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick=\"realizaProceso(-2,-1,-1,-1,-1 );return false;\">Todas las carreras</a></li>";
         while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
             $salida = $row["nombre"];
-            print "<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='" . $salida . "' href='#' onclick=\"realizaProceso(" . $row["id_area"] . ",-1,-1,-1,-1 );return false;\">" . $salida . "</a></li>";
+            print "<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='" . $salida . "' href='#' onclick=\"realizaProceso(" . $row["id_area"] . ",-1,-1,-1,-1,-1 );return false;\">" . $salida . "</a></li>";
         }echo '</ul>';
     }
     pg_close();
@@ -155,6 +155,7 @@ function afacultad() {
     }
     pg_close();
 }
+
 
 function acortar($nombre) {
     $arrv = array('Facultad de ', 'Asentamiento Universitario ', 'Centro Universitario Regional ', 'Centro Regional Universitario ');

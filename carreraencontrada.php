@@ -30,10 +30,14 @@ if (isset($_GET['id'])) {
         $descrip = "<div class='resalta2'>Descripción</div>" . description($id);
 
         $materias = materiation($id);
+		$meh = "<div class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?carrera=". $id ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fcarrera%3D". $id ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
+		<span style='vertical-align: bottom; width: 80px; height: 20px;'>
+		<iframe name='f39236a9e01d824' width='1000px' height='1000px' frameborder='0' allowtransparency='true' allowfullscreen='true' scrolling='no' title='fb:share_button Facebook Social Plugin' src='https://www.facebook.com/v2.5/plugins/share_button.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D42%23cb%3Df361cbb29a0d4c4%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%252Ff21c91d922c6fa%26relation%3Dparent.parent&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fcarrera%3D". $id ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey' style='border: none; visibility: visible; width: 80px; height: 20px;' class=''>
+		</iframe></span></div>";
 
         //Va al final
         $cuerpo = "<div class='resalta2'>Área: $area</div><div class='resalta2'> $unidadcompleta</div> <div class='resalta2'>Ciudad:</div> $ciudad<div class='resalta2'>Duración: $duracion</div>"
-                . "<div class='resalta2'>Titulo: $titulo</div>$descrip<hr><div class='conttit' title='Materias' Style='text-align:center; font-size: 2.5ex; text-transform: uppercase;text-decoration: underline;font-weight: bold;'>Materias</div>$materias<br>" . $observacion;
+                . "<div class='resalta2'>Titulo: $titulo</div>". $meh ."$descrip<hr><div class='conttit' title='Materias' Style='text-align:center; font-size: 2.5ex; text-transform: uppercase;text-decoration: underline;font-weight: bold;'>Materias</div>$materias<br>" . $observacion;
     }
     //select * from plan_estudio inner join unidad_academica on unidad_academica.sigla=plan_estudio.id_unidad_academica where plan_estudio.id_unidad_academica='FAIF'
     pg_close($con);
@@ -167,7 +171,6 @@ function salida($titular, $cuerpo) {
 
                 <div id='ej3'>
                     <div id='timeline'>
-                    
                     " . $cuerpo . "
 
                     </div>

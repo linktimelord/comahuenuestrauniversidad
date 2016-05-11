@@ -821,6 +821,27 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
         display: block;
     }
 }
+@media (min-width: 40em){
+	#tabs-recuadro{
+	position: fixed;
+	top: 250px;
+	right: -140px;
+	z-index: 9999;
+}
+
+.tab{
+	width: 200px;
+	margin-bottom: 5px;
+	right: 0px;
+	transition: all 0.3s ease-out 0s;
+}
+
+.tab:hover{
+	position: relative;
+	right: 140px;
+	box-shadow: 27px 15px 20px #666666;
+}
+}
 @media (min-width: 61.5em) {
     .jqm-demos .jqm-header {
 
