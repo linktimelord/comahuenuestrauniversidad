@@ -12,7 +12,7 @@
                         $salida = '';
                         echo '<ul>';
                         while ($row = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                            $unit = "<a style='color:#0064ad;text-decoration: none;' title='Ver información de la Unidad Académica' href='#' onclick=\"realizaProceso(-1,-1,-1,'" . $row["id_unidad_academica"] . "', -1, -1 );return false;\"> " . $row["unita"] . "</a>";
+                            $unit = "<a style='color:#0064ad;text-decoration: none;' title='Ver información de la Unidad Académica' href='?sigla=" . $row["id_unidad_academica"] . "' > " . $row["unita"] . "</a>";
                             $salida = $row["nombre"];
                             $area = $row["nomarea"];
                             if ($area != '') {
@@ -39,8 +39,11 @@
                                     }
                                 }
                             }
+							//<a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Posgrado" href='?nivel=2'>Posgrado</a>
+							
+							
 
-                            print "<li>&nbsp;&nbsp;<a href='#' title='" . $salida . "' onclick=\"Mostrarcar(" . $plan . ");return false;\">" . $salida . "</a>" . $area . " (" . $unit . ")" . $ubicacion . $duracion . "</li>";
+                            print "<li>&nbsp;&nbsp;<a href='?carrera=" . $plan . "' title='" . $salida . "' >" . $salida . "</a>" . $area . " (" . $unit . ")" . $ubicacion . $duracion . "</li>";
                         }echo '</ul>';
                     }
                     pg_close();

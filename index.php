@@ -61,7 +61,7 @@
         </script>
 
     </head>
-    <body onload="raqui();">
+    <body >
 	<?php
 	include("./dir.php");
 	?>
@@ -150,7 +150,7 @@
 
                         <div class="resultados" id="resultados">
                             <?php
-                            areas1();
+                            tomaget();
                             ?>
                         </div>
                         <hr>

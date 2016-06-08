@@ -106,10 +106,16 @@ if ($_GET['id_area'] != '-1') {
 
     include('funciones.php');
 } elseif (isset($_GET['facultad']) && $_GET['facultad'] != '-1') {
+	
+	$arrv = array("'", '%27', ' ');
+    $arrn = array('', '', '');
+    $facu = str_replace($arrv, $arrn, $_GET['facultad']);
+	
 
+    $sql = "SELECT nombre from unidad_academica where sigla='" . $facu . "'";
 
-    $sql = "SELECT nombre from unidad_academica where sigla='" . $_GET['facultad'] . "'";
-
+	
+	
     $result = consulta($sql);
 
 
@@ -130,7 +136,7 @@ if ($_GET['id_area'] != '-1') {
 
 
     include("funciones.php");
-}  elseif ($_GET['nivel'] != '-1') {
+}  elseif (isset($_GET['nivel']) && ($_GET['nivel'] != '-1')) {
 
     $tiempo = "";
     switch ($_GET['nivel']) {
