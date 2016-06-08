@@ -32,9 +32,8 @@
     <div data-role="collapsible">
         <h3 title="Buscar por duraci&oacute;n">DURACI&Oacute;N</h3>
             <ul data-role="listview" style="list-style: none;">
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick="realizaProceso(-2, -1, -1, -1, -1, -1);
-                    return false;">Todas las carreras</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Menor a 3 años" href='?duracion=1'>Menor a 3 años</a></li>
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='?todos=1'>Todas las carreras</a></li>
+			<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Menor a 3 años" href='?duracion=1'>Menor a 3 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="De 3 a 4 años" href='?duracion=2'>De 3 a 4 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="De 4 a 5 años" href='?duracion=3'>De 4 a 5 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Mayor a 5 años" href='?duracion=4'>Mayor a 5 años</a></li>
@@ -51,12 +50,9 @@
 	<div data-role="collapsible" style="text-align: center;">
         <h3 title="Buscar por nivel">NIVEL</h3>
             <ul data-role="listview" style="list-style: none;">
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='#' onclick="realizaProceso(-2, -1, -1, -1, -1, -1);
-                    return false;">Todas las carreras</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, -1, -1, -1, 1);
-                    return false;" title="Pregrado y Grado" href='#'>Pregrado / Grado</a></li>
-            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' onclick="realizaProceso(-1, -1, -1, -1, -1, 2);
-                    return false;" title="Posgrado" href='#'>Posgrado</a></li>
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='?todos=1'>Todas las carreras</a></li>
+			<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Pregrado y Grado" href='?nivel=1'>Pregrado / Grado</a></li>
+			<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Posgrado" href='?nivel=2'>Posgrado</a></li>
         </ul>
     </div>
 	
