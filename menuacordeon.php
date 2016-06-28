@@ -16,7 +16,7 @@
                 return false;">
 
 
-            <input title="Ingrese carrera" type="text" id="texto2" onclick = "if (this.value === 'Ingrese carrera...')
+            <input class="textobusca2" title="Ingrese carrera" type="text" id="texto2" onclick = "if (this.value === 'Ingrese carrera...')
                         this.value = ''" value="Ingrese carrera..." onkeypress="Buscar2();" autocomplete="off">
             <a style="text-decoration: none;display:inline;color:#880000;background: #fff;border-bottom:none;" href="#" onclick="Borrar2()"><span class="icon-cross" title="Borrar busqueda"></span></a>
         </form>
@@ -33,7 +33,7 @@
         <h3 title="Buscar por duraci&oacute;n">DURACI&Oacute;N</h3>
             <ul data-role="listview" style="list-style: none;">
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title='Todas las carreras' href='?todos=1'>Todas las carreras</a></li>
-			<li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Menor a 3 años" href='?duracion=1'>Menor a 3 años</a></li>
+            <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Menor a 3 años" href='?duracion=1'>Menor a 3 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="De 3 a 4 años" href='?duracion=2'>De 3 a 4 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="De 4 a 5 años" href='?duracion=3'>De 4 a 5 años</a></li>
             <li><a style='font-size:0.8em;color:#0064ad;text-decoration: none;' title="Mayor a 5 años" href='?duracion=4'>Mayor a 5 años</a></li>

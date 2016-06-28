@@ -18,8 +18,10 @@ function Buscador() {
 }
 
 function Buscar() {
-    var Texto = document.getElementById('texto').value;
-    var Resultados = document.getElementById('resultados');
+	var cont1 = (document.getElementsByClassName('textobusca').length) - 1;
+    var Texto = document.getElementsByClassName('textobusca')[cont1].value;
+	var cont2 = (document.getElementsByClassName('resultados').length) - 1;
+    var Resultados = document.getElementsByClassName('resultados')[cont2];
     ajax = Buscador();
     ajax.open("GET", "buscar.php?q=" + Texto);
     ajax.onreadystatechange = function () {
@@ -32,8 +34,10 @@ function Buscar() {
 }
 
 function Buscar2() {
-    var Texto2 = document.getElementById('texto2').value;
-    var Resultados = document.getElementById('resultados');
+	var cont3 = (document.getElementsByClassName('textobusca2').length) - 1;
+    var Texto2 = document.getElementsByClassName('textobusca2')[cont3].value;
+    var cont2 = (document.getElementsByClassName('resultados').length) - 1;
+    var Resultados = document.getElementsByClassName('resultados')[cont2];
     ajax = Buscador();
     ajax.open("GET", "buscar.php?q=" + Texto2);
     ajax.onreadystatechange = function () {
@@ -62,19 +66,23 @@ $('#cerrare').trigger('click');
 }
 
 function Borrar() {
-    var Texto = document.getElementById('texto');
-    var Resultados = document.getElementById('resultados');
+    var cont3 = (document.getElementsByClassName('textobusca').length) - 1;
+    var Texto = document.getElementsByClassName('textobusca')[cont3];
+	var cont2 = (document.getElementsByClassName('resultados').length) - 1;
+    var Resultados = document.getElementsByClassName('resultados')[cont2];
     Resultados.innerHTML = "<div id='smallresp' title='Menu - Busqueda' style='font-size:1em;text-align:center;color: #059BD8; text-decoration: none;'><span class='icon-arrow-up' style='color:#0064ad;'></span> &nbsp;&nbsp;&nbsp;&nbsp;MENU    |    BUSCAR CARRERAS &nbsp;&nbsp;&nbsp;&nbsp;<span class='icon-arrow-up' style='color:#0064ad;'></span></div><br>\n\
 <div id='bigresp' title='Menu - Busqueda' style='font-size:1.8em;text-align:center;color: #059BD8; text-decoration: none;'>BUSCAR CARRERAS &nbsp;&nbsp;&nbsp;&nbsp;<span class='icon-arrow-right' style='color:#0064ad;'></span></div><br>";
-    Texto.value='Ingrese carrera...';
+    Texto.value='';
 }
 
 function Borrar2() {
-    var Texto = document.getElementById('texto2');
-    var Resultados = document.getElementById('resultados');
+    var cont1 = (document.getElementsByClassName('textobusca2').length) - 1;
+    var Texto = document.getElementsByClassName('textobusca2')[cont1];
+    var cont2 = (document.getElementsByClassName('resultados').length) - 1;
+    var Resultados = document.getElementsByClassName('resultados')[cont2];
     Resultados.innerHTML = "<div id='smallresp' title='Menu - Busqueda' style='font-size:1em;text-align:center;color: #059BD8; text-decoration: none;'><span class='icon-arrow-up' style='color:#0064ad;'></span> &nbsp;&nbsp;&nbsp;&nbsp;MENU    |    BUSCAR CARRERAS &nbsp;&nbsp;&nbsp;&nbsp;<span class='icon-arrow-up' style='color:#0064ad;'></span></div><br>\n\
 <div id='bigresp' title='Menu - Busqueda' style='font-size:1.8em;text-align:center;color: #059BD8; text-decoration: none;'>BUSCAR CARRERAS &nbsp;&nbsp;&nbsp;&nbsp;<span class='icon-arrow-right' style='color:#0064ad;'></span></div><br>";
-    Texto.value='Ingrese carrera...';
+    Texto.value='';
 }
 
 function Mostrar(Texto) {

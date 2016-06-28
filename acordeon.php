@@ -15,7 +15,7 @@
                 return false;">
 
 
-            <input title="Ingrese carrera" type="text" id="texto" onclick = "if (this.value === 'Ingrese carrera...')
+            <input class="textobusca" title="Ingrese carrera" type="text" id="texto11" onclick = "if (this.value === 'Ingrese carrera...')
                         this.value = ''" value="Ingrese carrera..." onkeypress="Buscar();" autocomplete="off">
             <a style="text-decoration: none;display:inline;color:#880000;background: #fff;border-bottom:none;" href="#" onclick="Borrar()"><span class="icon-cross" title="Borrar busqueda"></span></a>
         </form>
