@@ -20,7 +20,11 @@
                             }
                             $duracion = $row["duracion"];
                             if ($duracion != '') {
-                                $duracion = '<br> &nbsp; ' . ($duracion / 2) . " años";
+								if (($duracion / 2) < 2 ) {
+									$duracion = '<br> &nbsp; ' . ($duracion / 2) . " año";
+									}else{
+										$duracion = '<br> &nbsp; ' . ($duracion / 2) . " años";
+										}
                             }
                             $plan = $row["id_plan"];
 

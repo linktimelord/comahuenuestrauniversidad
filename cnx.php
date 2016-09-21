@@ -50,7 +50,8 @@ function description($id) {
 function duration($dur) {
     if ($dur != '') {
         $dur = $dur / 2;
-        $dur = $dur . " años";
+		if($dur < 1.5){$dur = $dur . " año";}
+		else{$dur = $dur . " años";}
     }
     return $dur;
 }
@@ -324,7 +325,7 @@ function tomaget(){
         $unidadcompleta = unition();
         $observacion = observation();
 
-        $descrip = "<div class='resalta2'>Descripción</div>" . description($id);
+        $descrip = "<div class='resalta2'>Descripción</div><div style='text-align: justify;'>" . description($id) . "</div>";
 
         $materias = materiation($id);
 		$meh = "<div class='fb-share-button fb_iframe_widget' data-href='http://www.uncoma.edu.ar/oferta/?carrera=". $id ." data-layout='button' fb-xfbml-state='rendered' fb-iframe-plugin-query='app_id=&amp;container_width=255&amp;href=http%3A%2F%2Fwww.uncoma.edu.ar%2Foferta%2F%3Fcarrera%3D". $id ."&amp;layout=button&amp;locale=es_LA&amp;sdk=joey'>
@@ -539,7 +540,12 @@ function Extraer($q) {
             }
             $duracion = $row["duracion"];
             if ($duracion != '') {
-                $duracion = '<br> &nbsp; ' . ($duracion / 2) . " años";
+				if (($duracion / 2) < 1.5 ) {
+					$duracion = '<br> &nbsp; ' . ($duracion / 2) . " año";
+				}else{
+					$duracion = '<br> &nbsp; ' . ($duracion / 2) . " años";
+				}
+                
             }
             $plan = $row["id_plan"];
 

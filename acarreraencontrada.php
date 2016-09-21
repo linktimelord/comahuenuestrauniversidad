@@ -91,7 +91,8 @@ function description($id) {
 function duration($dur) {
     if ($dur != '') {
         $dur = $dur / 2;
-        $dur = $dur . " años";
+        if($dur < 1.5){$dur = $dur . " año";}
+		else{$dur = $dur . " años";}
     }
     return $dur;
 }
